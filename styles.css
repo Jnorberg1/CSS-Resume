@@ -1,0 +1,258 @@
+:root {
+  --bg: #0b1220;
+  --panel: #101a33;
+  --card: #0f1a2e;
+  --text: #e8eefc;
+  --muted: #b9c6ea;
+  --line: rgba(255, 255, 255, 0.10);
+  --accent: #77a7ff;
+  --accent2: #8df0c7;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(1200px 600px at 20% 0%, rgba(119, 167, 255, 0.18), transparent 60%),
+              radial-gradient(900px 500px at 90% 10%, rgba(141, 240, 199, 0.14), transparent 55%),
+              var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 10px;
+  background: #fff;
+  color: #000;
+  padding: 10px 12px;
+  border-radius: 10px;
+  z-index: 999;
+}
+
+.skip-link:focus {
+  left: 12px;
+}
+
+/* header */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: rgba(16, 26, 51, 0.55);
+  backdrop-filter: blur(10px);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 22px 18px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.name-block h1 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 0.2px;
+}
+
+.tagline {
+  margin: 6px 0 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.contact-block {
+  display: grid;
+  gap: 8px;
+  text-align: right;
+}
+
+.contact-row {
+  display: grid;
+  gap: 2px;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+/* layout wrapper */
+.page {
+  max-width: 1100px;
+  margin: 22px auto;
+  padding: 0 18px 28px 18px;
+  display: grid;
+  gap: 18px;
+}
+
+/* cards */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+.card h2 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+
+.item + .item {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.item-top {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.item-top h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.role {
+  margin: 6px 0 10px 0;
+  color: var(--accent2);
+}
+
+/* lists */
+.bullet {
+  margin: 10px 0 0 18px;
+}
+
+.link-list {
+  margin: 10px 0 0 18px;
+}
+
+.pill-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill-list li {
+  border: 1px solid var(--line);
+  background: rgba(0,0,0,0.18);
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+/* small text helpers */
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 13px;
+}
+
+/* project image */
+.project-hero {
+  display: flex;
+  justify-content: center;
+}
+
+.project-hero img {
+  max-width: 100%;
+  width: 520px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+/* footer */
+.site-footer {
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--muted);
+  padding: 18px;
+}
+
+/* responsive behavior */
+/* mobile layout default: stack everything */
+.sidebar, .main {
+  display: grid;
+  gap: 18px;
+}
+
+/* make single pages not use sidebar spacing */
+.page-single {
+  grid-template-columns: 1fr;
+}
+
+.main.full {
+  width: 100%;
+}
+
+/* desktop layout: 2 columns */
+@media (min-width: 900px) {
+  .page {
+    grid-template-columns: 360px 1fr;
+    align-items: start;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 18px;
+    align-self: start;
+  }
+}
+
+/* extra wide desktop polish (nice at 1920px) */
+@media (min-width: 1400px) {
+  .header-inner,
+  .page {
+    max-width: 1250px;
+  }
+
+  .name-block h1 {
+    font-size: 36px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+}
