@@ -53,7 +53,7 @@ a:hover {
   left: 12px;
 }
 
-/* header */
+
 .site-header {
   border-bottom: 1px solid var(--line);
   background: rgba(16, 26, 51, 0.55);
@@ -100,7 +100,7 @@ a:hover {
   text-transform: uppercase;
 }
 
-/* layout wrapper */
+
 .page {
   max-width: 1100px;
   margin: 22px auto;
@@ -109,7 +109,7 @@ a:hover {
   gap: 18px;
 }
 
-/* cards */
+
 .card {
   background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
   border: 1px solid var(--line);
@@ -154,7 +154,7 @@ a:hover {
   color: var(--accent2);
 }
 
-/* lists */
+
 .bullet {
   margin: 10px 0 0 18px;
 }
@@ -180,7 +180,7 @@ a:hover {
   font-size: 13px;
 }
 
-/* small text helpers */
+
 .muted {
   color: var(--muted);
 }
@@ -189,7 +189,7 @@ a:hover {
   font-size: 13px;
 }
 
-/* project image */
+
 .project-hero {
   display: flex;
   justify-content: center;
@@ -203,7 +203,7 @@ a:hover {
   box-shadow: var(--shadow);
 }
 
-/* footer */
+
 .site-footer {
   border-top: 1px solid var(--line);
   text-align: center;
@@ -211,14 +211,13 @@ a:hover {
   padding: 18px;
 }
 
-/* responsive behavior */
-/* mobile layout default: stack everything */
+
 .sidebar, .main {
   display: grid;
   gap: 18px;
 }
 
-/* make single pages not use sidebar spacing */
+
 .page-single {
   grid-template-columns: 1fr;
 }
@@ -227,7 +226,7 @@ a:hover {
   width: 100%;
 }
 
-/* desktop layout: 2 columns */
+
 @media (min-width: 900px) {
   .page {
     grid-template-columns: 360px 1fr;
@@ -241,7 +240,7 @@ a:hover {
   }
 }
 
-/* extra wide desktop polish (nice at 1920px) */
+
 @media (min-width: 1400px) {
   .header-inner,
   .page {
